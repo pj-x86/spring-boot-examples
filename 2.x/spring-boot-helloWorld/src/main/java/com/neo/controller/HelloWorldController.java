@@ -10,4 +10,10 @@ public class HelloWorldController {
     public String index() {
         return "Hello World";
     }
+
+    @RequestMapping("/html")
+    public String html() {
+        String resp = "<html><a href=\"https://www.runoob.com/\">访问菜鸟教程</a></html>";
+        return resp;
+    }
 }

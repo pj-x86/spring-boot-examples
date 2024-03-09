@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 @Controller
 public class UploadController {
     //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "E://temp//";
+    private static String UPLOADED_FOLDER = "./tmp/";
 
     @GetMapping("/")
     public String index() {
@@ -39,6 +39,7 @@ public class UploadController {
             if(!Files.exists(dir)) {
                 Files.createDirectories(dir);
             }
+            System.out.println(path.toString());
             Files.write(path, bytes);
             redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded '" + file.getOriginalFilename() + "'");
