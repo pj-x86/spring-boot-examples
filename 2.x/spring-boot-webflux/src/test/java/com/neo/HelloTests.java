@@ -18,4 +18,9 @@ public class HelloTests {
     public void getHello() {
         client.get().uri("/hello").exchange().expectStatus().isOk();
     }
+
+    @Test
+    public void getGreetingsWithName() {
+        client.get().uri("/greetings-with-name?name=PJ").exchange().expectStatus().isOk();
+    }
 }
